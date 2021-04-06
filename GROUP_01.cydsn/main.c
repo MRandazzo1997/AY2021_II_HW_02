@@ -8,6 +8,7 @@
  *
  * ========================================
 */
+
 #include "project.h"
 #include "InterruptRoutines.h"
 #include "RGB_Led_Driver.h"
@@ -15,13 +16,13 @@
 #include "string.h"
 
 //Variables
-extern uint8_t state;
-extern uint8_t timerConfig;
-extern uint8_t colors[5];
-extern int i;
-Color c_new, c_old;
+uint8_t state = 0;
+uint8_t timerConfig = 0;
+uint8_t data[5];
 uint8_t counterTimer = 0;
 uint8_t timerPeriod = 5;
+Color c_new, c_old;
+int i = 0;
 
 int main(void)
 {
@@ -50,14 +51,14 @@ int main(void)
                 c_new = c_old;
                 break;
             }
-            c_new.red = colors[1];
-            c_new.green = colors[2];
-            c_new.blue = colors[3];
+            c_new.red = data[1];
+            c_new.green = data[2];
+            c_new.blue = data[3];
         }
         //Timer header byte received, change timeout duration
         while(timerConfig)
         {
-            timerPeriod = colors[1];
+            timerPeriod = data[1];
         }
         //No need of timer anymore --> color has been updated or too much time has passed
         Timer_Stop();

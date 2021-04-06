@@ -1,11 +1,10 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
+ * ASSIGNMENT 02 - PSoC Creator
+ * Group 01
+ * Beatrice Pedretti, Mattia Randazzo
  *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * UART controlling color of RGB led
  *
  * ========================================
 */
@@ -14,30 +13,38 @@
 #include "stdio.h"
 #include "RGB_Led_Driver.h"
 
+//Variables
 extern uint8_t counterTimer;
-uint8_t state = 0;
-uint8_t timerConfig = 0;
-uint8_t color;
-int i = 0;
-uint8_t colors[5];
+extern uint8_t state;
+extern uint8_t timerConfig;
+extern uint8_t data[5];
+extern int i;
+uint8_t byte;
+
 
 
 CY_ISR(UART_ISR){
     if(UART_ReadRxStatus() == UART_RX_STS_FIFO_NOTEMPTY)
     {
         counterTimer = 0;
-        color = UART_ReadRxData();
-        if(color == 118)
+        //Read data
+        byte = UART_ReadRxData();
+        //Required for testing
+        if(byte == 118)
             UART_PutString("RGB LED Program $$$");
         else
         {
-            colors[i] = color;
+            //Store the byte received
+            data[i] = byte;
             i++;
-            if(color == 160)
+            //Color header byte
+            if(byte == 160)
                 state = 1;
-            if(color == 161)
+            //Timer header byte
+            if(byte == 161)
                 timerConfig = 1;
-            if(color == 192)
+            //Tail byte
+            if(byte == 192)
             {
                 i = 0;
                 state = 0;
@@ -51,6 +58,7 @@ CY_ISR(Timer_ISR)
 {
     //Clear isr line
     Timer_ReadStatusRegister();
+    //1s has passed
     counterTimer++;
     
 }

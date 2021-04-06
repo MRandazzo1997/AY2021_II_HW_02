@@ -1,11 +1,10 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
+ * ASSIGNMENT 02 - PSoC Creator
+ * Group 01
+ * Beatrice Pedretti, Mattia Randazzo
  *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * UART controlling color of RGB led
  *
  * ========================================
 */
