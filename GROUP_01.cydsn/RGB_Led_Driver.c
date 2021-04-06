@@ -11,9 +11,10 @@
 
 #include "RGB_Led_Driver.h"
 
+//private functions declaration
 static void RGB_Led_UpdateRed(uint8_t red);
 static void RGB_Led_UpdateGreen(uint8_t green);
-static void RGB_Led_UpdateBlue(uint8_t Blue);
+static void RGB_Led_UpdateBlue(uint8_t blue);
 
 //Function to start PWM components
 void RGB_Led_Start()

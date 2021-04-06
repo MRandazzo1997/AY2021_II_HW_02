@@ -9,6 +9,7 @@
  * ========================================
 */
 
+//Include header files
 #include "project.h"
 #include "InterruptRoutines.h"
 #include "RGB_Led_Driver.h"
@@ -21,7 +22,7 @@ uint8_t timerConfig = 0;
 uint8_t data[5];
 uint8_t counterTimer = 0;
 uint8_t timerPeriod = 5;
-Color c_new, c_old;
+Color c_new={0,0,0}, c_old={0,0,0};
 int i = 0;
 
 int main(void)

@@ -13,10 +13,13 @@
 #ifndef __INTERRUPT_ROUTINES_H__
     #define __INTERRUPT_ROUTINES_H__
     
+    //Include header files
     #include "project.h"
     
+    //ISR declaration
     CY_ISR_PROTO(UART_ISR);
     CY_ISR_PROTO(Timer_ISR);
+    
 #endif
 
 /* [] END OF FILE */

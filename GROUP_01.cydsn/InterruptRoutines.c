@@ -9,6 +9,7 @@
  * ========================================
 */
 
+//Include header files
 #include "InterruptRoutines.h"
 #include "stdio.h"
 #include "RGB_Led_Driver.h"
@@ -26,10 +27,11 @@ uint8_t byte;
 CY_ISR(UART_ISR){
     if(UART_ReadRxStatus() == UART_RX_STS_FIFO_NOTEMPTY)
     {
+        //counterTimer initialization
         counterTimer = 0;
         //Read data
         byte = UART_ReadRxData();
-        //Required for testing
+        //Required for testing: upon receiving character "v", send "RGB LED Program $$$" to serial port
         if(byte == 118)
             UART_PutString("RGB LED Program $$$");
         else

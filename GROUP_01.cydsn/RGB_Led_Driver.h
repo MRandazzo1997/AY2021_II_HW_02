@@ -22,11 +22,11 @@
         uint8_t blue;
     } Color;
     
-    void RGB_Led_Start();
-    
-    void RGB_Led_Stop();
-    
+    //RGB LED functions
+    void RGB_Led_Start();    
+    void RGB_Led_Stop();   
     void RGB_Led_Write(Color c);
+    
 #endif
 
 /* [] END OF FILE */
