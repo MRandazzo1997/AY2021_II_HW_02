@@ -24,7 +24,7 @@
 <WriteAppMarketingVersionLastSavedWith v="4.4" />
 <CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWorkspaceSerialize+CyPrjDependencyList" version="4">
 <wrkspc_dependencies>
-<wrkspc_dependency project="GROUP_01.cydsn\GROUP_01.cyprj" dependency="..\..\..\Libraries\AnnotationLibrary\AnnotationLibrary_lib\AnnotationLibrary_lib.cylib\AnnotationLibrary_lib.cyprj" />
+<wrkspc_dependency project="GROUP_01.cydsn\GROUP_01.cyprj" dependency="D:\Ingegneria Biomedica\Magistrale\2° anno\Laboratory\PSoC\AnnotationLibrary\AnnotationLibrary_lib\AnnotationLibrary_lib.cylib\AnnotationLibrary_lib.cyprj" />
 <wrkspc_dependency project="GROUP_02.cydsn\GROUP_02.cyprj" dependency="..\..\..\Libraries\AnnotationLibrary\AnnotationLibrary_lib\AnnotationLibrary_lib.cylib\AnnotationLibrary_lib.cyprj" />
 <wrkspc_dependency project="GROUP_03.cydsn\GROUP_03.cyprj" dependency="..\..\..\Libraries\AnnotationLibrary\AnnotationLibrary_lib\AnnotationLibrary_lib.cylib\AnnotationLibrary_lib.cyprj" />
 <wrkspc_dependency project="GROUP_04.cydsn\GROUP_04.cyprj" dependency="..\..\..\Libraries\AnnotationLibrary\AnnotationLibrary_lib\AnnotationLibrary_lib.cylib\AnnotationLibrary_lib.cyprj" />
