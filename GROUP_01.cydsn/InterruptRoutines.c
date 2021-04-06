@@ -52,6 +52,27 @@ CY_ISR(UART_ISR){
                 state = 0;
                 timerConfig = 0;
             }
+            /*TIMER CONFIGURATION TRIAL: UNCOMMENT IF APPROVED
+            //Changed if statements to switch-case syntax
+            switch (byte)
+            {
+                //Color header byte
+                case 160:
+                    state = 1;
+                    break;
+                //Timer header byte
+                //hexadecimal?
+                case 0x01 ... 0x14:
+                    timerConfig = 1;
+                    break;
+                //Tail byte
+                case 192:
+                    i = 0;
+                    state = 0;
+                    timerConfig = 0;
+                    break;
+            }
+            */
         }
     }    
 }
