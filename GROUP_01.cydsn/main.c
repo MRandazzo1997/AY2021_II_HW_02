@@ -66,8 +66,6 @@ int main(void)
         RGB_Led_Write(c_new);
         //Backup of the current color
         c_old = c_new;
-        //Reset timer period if changed
-        timerPeriod = 5;
     }
 }
 
