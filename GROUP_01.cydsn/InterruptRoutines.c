@@ -33,7 +33,7 @@ CY_ISR(UART_ISR){
         byte = UART_ReadRxData();
         //Required for testing: upon receiving character "v", send "RGB LED Program $$$" to serial port
         if(byte == 118)
-            UART_PutString("RGB LED Program $$$");
+            UART_PutString("RGB LED Program $$$\r\n");
         else
         {
             //Store the byte received
@@ -52,8 +52,7 @@ CY_ISR(UART_ISR){
                 state = 0;
                 timerConfig = 0;
             }
-            /*TIMER CONFIGURATION TRIAL: UNCOMMENT IF APPROVED
-            //Changed if statements to switch-case syntax
+            /*Possibility to change if statements to switch-case syntax
             switch (byte)
             {
                 //Color header byte
@@ -61,8 +60,7 @@ CY_ISR(UART_ISR){
                     state = 1;
                     break;
                 //Timer header byte
-                //hexadecimal?
-                case 0x01 ... 0x14:
+                case 161:
                     timerConfig = 1;
                     break;
                 //Tail byte
