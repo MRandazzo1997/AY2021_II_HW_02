@@ -50,6 +50,7 @@ int main(void)
                 counterTimer = 0;
                 state = 0;
                 c_new = c_old;
+                UART_PutString("Reset");
                 break;
             }
             c_new.red = data[1];
@@ -59,7 +60,8 @@ int main(void)
         //Timer header byte received, change timeout duration
         while(timerConfig)
         {
-            timerPeriod = data[1];
+            if(data[1] <= 20 && data[1] >= 1)
+                timerPeriod = data[1];
         }
         //No need of timer anymore --> color has been updated or too much time has passed
         Timer_Stop();
